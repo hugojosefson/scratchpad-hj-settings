@@ -1,0 +1,28 @@
+{
+  "tasks": {
+    "fmt": {
+      "description": "Fix formatting.",
+      "command": "deno fmt"
+    },
+    "format": {
+      "description": "Check formatting.",
+      "command": "deno fmt --check"
+    },
+    "check": {
+      "description": "Run project checks.",
+      "dependencies": [
+        "format"
+      ]
+    },
+    "default": {
+      "description": "Fix formatting, then run checks.",
+      "command": "deno fmt && deno task check"
+    },
+    "all": {
+      "description": "Run all checks.",
+      "dependencies": [
+        "check"
+      ]
+    }
+  }
+}
